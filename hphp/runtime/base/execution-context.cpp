@@ -800,7 +800,7 @@ bool ExecutionContext::onFatalError(const Exception &e) {
   // need to silence even with the AlwaysLogUnhandledExceptions flag set
   if (!silenced && RuntimeOption::AlwaysLogUnhandledExceptions) {
     Logger::Log(Logger::LogError, prefix, e, fileAndLine.first.c_str(),
-	            fileAndLine.second);
+                fileAndLine.second);
   }
   bool handled = false;
   if (RuntimeOption::CallUserHandlerOnFatals) {
@@ -808,7 +808,7 @@ bool ExecutionContext::onFatalError(const Exception &e) {
   }
   if (!handled && !silenced && !RuntimeOption::AlwaysLogUnhandledExceptions) {
     Logger::Log(Logger::LogError, prefix, e, fileAndLine.first.c_str(),
-	            fileAndLine.second);
+                fileAndLine.second);
   }
   return handled;
 }
